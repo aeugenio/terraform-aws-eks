@@ -251,3 +251,9 @@ variable "workers_role_name" {
   type        = string
   default     = ""
 }
+
+variable "cluster_additional_security_group_ids" {
+  description = "A list of additional security group ids to attach to the cluster"
+  type        = list(string)
+  default     = []
+}
