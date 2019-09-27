@@ -126,6 +126,12 @@ variable "worker_ami_name_filter" {
   default     = "v*"
 }
 
+variable "worker_ami_name_filter_prefix" {
+  description = "Name prefix filter for AWS EKS worker AMI. Default behaviour will get regular EKS-Optimized AMI but could be set to a EKS-Optimized AMI with GPU Support, e.g. \"amazon-eks-gpu-node\", or custom AMI"
+  type        = string
+  default     = "amazon-eks-node"
+}
+
 variable "worker_additional_security_group_ids" {
   description = "A list of additional security group ids to attach to worker instances"
   type        = list(string)
@@ -204,10 +210,16 @@ variable "worker_create_security_group" {
   default     = true
 }
 
+variable "worker_create_initial_lifecycle_hooks" {
+  description = "Whether to create initial lifecycle hooks provided in worker groups."
+  type        = bool
+  default     = false
+}
+
 variable "permissions_boundary" {
   description = "If provided, all IAM roles will be created with this permissions boundary attached."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "iam_path" {

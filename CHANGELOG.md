@@ -15,7 +15,21 @@ project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-- Write your awesome change here (by @you)
+ - Add option to enable lifecycle hooks creation (by @barryib)
+ - Remove helm chart value `sslCertPath` described in `docs/autoscaling.md` (by @wi1dcard)
+
+# History
+
+## [[v6.0.1](https://github.com/terraform-aws-modules/terraform-aws-eks/compare/v6.0.0...v6.0.1)] - 2019-09-25]
+
+### Added
+
+ - Added support for different workers AMI's, i.e. with GPU support (by @rvoitenko)
+
+### Changed
+
+- Use null as default value for `target_group_arns` attribute of worker autoscaling group (by @tatusl)
+- Output empty string when cluster identity is empty (by @tbarry)
 
 # History
 
